@@ -19,15 +19,15 @@ Existe um relacionamento entre as classes Cliente e Cidade. A Entidade Cliente p
 
 ##### Observações:   
  - A base de dados utilizada, foi uma base NoSQL hospedado na nuvem. Ou seja, já há massa para realização dos testes.
-   para maiores informações sobre onde está hospedado, segue link: https://www.mongodb.com/cloud/atlas
+   Para maiores informações sobre onde está hospedado, segue link: https://www.mongodb.com/cloud/atlas
 
 # Tutorial para execução e testes da api.
 
-### Para execução dos testes unitários e de integração executar o comando abaixo na raízdo projeto:
+### Para execução dos testes unitários e de integração, executar o comando abaixo na raíz do projeto:
 ```sh
 $ mvn test
 ```
-### Para "startar" a aplicação , executar o comando abaixo, na raiz do projeto:
+### Para "startar" a aplicação, executar o comando abaixo na raiz do projeto:
 ```sh
 $./mvnw spring-boot:run
 ```
@@ -36,20 +36,20 @@ $./mvnw spring-boot:run
 # ENDPOINTS CIDADES:
 | Método | Endpoint | Exemplos |
 | ------ | ------   | ------   |
-| POST | [/api/cidades/][PlDb]                      | [localhost:8080/api/cidades/][PlDb] |
-| GET  |  [/api/cidades/cidade/{cidadeNome}] [PlDb] | [localhost:8080/api/cidades/cidade/Rio de Janeiro][PlGh] |
-| GET  |  [/api/cidades/estado/{estadoNome}][PlDb]  |[localhost:8080/api/cidades/estado/Rio de Janeiro][PlGd] |
+| POST | /api/cidades/                      | localhost:8080/api/cidades/|
+| GET  | /api/cidades/cidade/{cidadeNome} | [localhost:8080/api/cidades/cidade/Rio de Janeiro |
+| GET  |  /api/cidades/estado/{estadoNome}  |[localhost:8080/api/cidades/estado/Rio de Janeiro |
 
 
 # ENDPOINTS CLIENTES:
 | Método | Endpoint | Exemplos |
 | ------ | ------   | ------   |
-| POST | [/api/clientes/][PlDb]           | [localhost:8080/api/clientes/][PlDb] |
-| PUT  |  [/api/clientes/{id}] [PlDb]     | [localhost:8080/api/cidades/cidade/Rio de Janeiro][PlGh] |
-| DELETE  |  [/api/clientes/{id}][PlDb]   |[localhost:8080/api/clientes/600b1b67d5e28d29946f996b][PlGd] |
-| GET | [/api/clientes/all][PlDb]         | [localhost:8080/api/clientes/all][PlDb] |
-| GET  |  [/api/clientes/id] [PlDb]       | [localhost:8080/api/clientes/id?id=600b1b67d5e28d29946f996b][PlGh] |
-| GET  |  [/api/clientes/nome][PlDb]      |[localhost:8080/api/clientes/nome?nomeCompleto=Diego Gomes][PlGd] |
+| POST | /api/clientes/ | localhost:8080/api/clientes/ |
+| PUT  |  /api/clientes/{id}|localhost:8080/api/cidades/cidade/Rio de Janeiro |
+| DELETE  |  /api/clientes/{id}   |localhost:8080/api/clientes/600b1b67d5e28d29946f996b |
+| GET | /api/clientes/all        | localhost:8080/api/clientes/all|
+| GET  |  /api/clientes/id]      | localhost:8080/api/clientes/id?id=600b1b67d5e28d29946f996b |
+| GET  |  /api/clientes/nome     |localhost:8080/api/clientes/nome?nomeCompleto=Diego Gomes |
 
 
 #### Exemplos de requisição POST E PUT
@@ -71,7 +71,7 @@ $./mvnw spring-boot:run
     }
 
 ##### PUT
-##### Alterar nome do cliente Cliente:    
+##### Alterar nome do cliente:    
     url: localhost:8080/api/clientes/6010202bee6bd909657fa888
     {
         "id" : "6010202bee6bd909657fa888",
@@ -84,6 +84,6 @@ $./mvnw spring-boot:run
     
     
 ### TODO
- - Corrigir erro na criação de image docker
- - Subir nos servidores da heroku e fazer a integração continua com o github
+ - Corrigir erro na criação de image docker.
+ - Subir nos servidores da heroku e fazer a integração continua com o github.
  - Alterar o processo de cadastor de clientes, caso não existe a cidade do cliente, persistir junto com o cliente.
