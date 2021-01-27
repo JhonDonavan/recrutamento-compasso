@@ -1,1 +1,1 @@
-web: java -cp target/classes/;target/dependency/* br.com.recrutamentocompasso.RecrutamentoCompassoApplication
+web: java -cp target/classes/:target/dependency/* v1.a1.server
