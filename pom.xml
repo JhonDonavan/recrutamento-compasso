@@ -94,49 +94,19 @@
 	</dependencies>
 
 	<build>
-		<finalName>recrutamento-compasso-web</finalName>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<dependencies>
-					<dependency>
-						<groupId>org.springframework</groupId>
-						<artifactId>springloaded</artifactId>
-						<version>1.2.1.RELEASE</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${basedir}/target/dockerfile</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/main/docker</directory>
-									<filtering>true</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.4.0</version>
+				<version>0.4.13</version>
 				<configuration>
-					<goalPrefix>dockerfile</goalPrefix>
-					<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
-					<imageName>${docker.image.name}:${docker.image.tag}</imageName>
-					<dockerDirectory>${basedir}/target/dockerfile</dockerDirectory>
+					<imageName>compasso</imageName>
+					<baseImage>compasso/alpine-oraclejdk8:slim</baseImage>
+					<entryPoint>["sh", "-c", "java
+						-Djava.security.egd=file:/dev/./urandom -jar
+						/${project.build.finalName}.jar
+						--spring.profiles.active=${spring.profile}"]
+					</entryPoint>
 					<resources>
 						<resource>
 							<targetPath>/</targetPath>
@@ -144,6 +114,10 @@
 							<include>${project.build.finalName}.jar</include>
 						</resource>
 					</resources>
+					<imageTags>
+						<imageTag>${project.version}</imageTag>
+						<imageTag>latest</imageTag>
+					</imageTags>
 				</configuration>
 			</plugin>
 		</plugins>
