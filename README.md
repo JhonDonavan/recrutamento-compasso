@@ -32,6 +32,9 @@ $ mvn test
 $./mvnw spring-boot:run
 ```
 
+### Para acessar a documentação dos endpoints gerado pelo SWAGGER, acessar a url:
+    url http://localhost:8080/swagger-ui.html
+
 
 # ENDPOINTS CIDADES:
 | Método | Endpoint | Exemplos |
