@@ -12,12 +12,12 @@
 
 .
 
-##### Regras de negocios:
+#### Regras de negocios:
 Para a classe Cliente, não é necessário informar a idade, uma vez que é informado data nascimento, a aplicação já calcula a idade do cliente com base nada data informada.
 
 Existe um relacionamento entre as classes Cliente e Cidade. A Entidade Cliente possui um campo do tipo String chamado *nomeCidade*, ao informar um valor para o campo *nomeCidade*, ao persistir um cliente, é verificado se existe alguma cidade com o nome informado, caso contrario, será necessário cadastrar a cidade desejada.
 
-##### Observações:   
+#### Observações:   
  - A base de dados utilizada, foi uma base NoSQL hospedado na nuvem. Ou seja, já há massa para realização dos testes.
    Para maiores informações sobre onde está hospedado, segue link: https://www.mongodb.com/cloud/atlas
 
@@ -48,7 +48,7 @@ $./mvnw spring-boot:run
 | PUT  |  /api/clientes/{id}|localhost:8080/api/cidades/cidade/Rio de Janeiro |
 | DELETE  |  /api/clientes/{id}   |localhost:8080/api/clientes/600b1b67d5e28d29946f996b |
 | GET | /api/clientes/all        | localhost:8080/api/clientes/all|
-| GET  |  /api/clientes/id]      | localhost:8080/api/clientes/id?id=600b1b67d5e28d29946f996b |
+| GET  |  /api/clientes/id      | localhost:8080/api/clientes/id?id=600b1b67d5e28d29946f996b |
 | GET  |  /api/clientes/nome     |localhost:8080/api/clientes/nome?nomeCompleto=Diego Gomes |
 
 
