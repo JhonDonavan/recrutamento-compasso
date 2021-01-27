@@ -40,11 +40,11 @@ public class SwaggerConfig {
 
 	private ApiInfo metaInfo() {
 
-		ApiInfo apiInfo = new ApiInfo("###############################", "###############################", "#.#",
-				"###############################",
-				new Contact("###############################", "###############################",
-						"###############################"),
-				"###############################", "###############################", Collections.emptyList());
+		ApiInfo apiInfo = new ApiInfo("Projeto recrutamento compasso", "Mais informações", "1.0",
+				"informações",
+				new Contact("Jhon oliveira", "Desenvolvedor",
+						""),
+				"jhondonavan@gmail.com", "www.linkedin.com/in/jhon-oliveira", Collections.emptyList());
 
 		return apiInfo;
 	}
