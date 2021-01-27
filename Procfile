@@ -1,1 +1,1 @@
-web: java -jar target/recrutamento_compasso-0.0.1-SNAPSHOT.war
+web: java -cp target/classes/;target/dependency/* br.com.recrutamentocompasso.RecrutamentoCompassoApplication
